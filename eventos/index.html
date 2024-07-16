@@ -24,7 +24,7 @@
 
         <form class="ejercicio1">
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Estatura</label>
+                <label  class="form-label">Estatura</label>
                 <div class="form-text">
                     en centimetros:
                 </div>
@@ -33,7 +33,7 @@
 
             <div class="row g-3 align-items-center res">
                 <div class="col-auto">
-                    <label for="inputPassword6" class="col-form-label">Resultado:</label>
+                    <label class="col-form-label">Resultado:</label>
                 </div>
                 <div class="col-auto">
                     <input type="text" class="form-control" id="resultado" placeholder="20.7">
@@ -42,11 +42,11 @@
             </div>
 
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Peso</label>
+                <label class="form-label">Peso</label>
                 <div class="form-text">
                     en kilogramos:
                 </div>
-                <input type="email" class="form-control" id="peso" placeholder="62">
+                <input type="text" class="form-control" id="peso" placeholder="62">
             </div>
 
             <div class="col-auto">
@@ -77,8 +77,8 @@
 
                 <form>
                     <select class="form-select moneda" aria-label="Default select example">
-                        <option id="dolar" selected><span>USD $</span> - Dolar estadounidense</option>
-                       
+                        <option id="dolar" selected>USD $ - Dolar estadounidense</option>
+
                     </select>
                     <input class="form-control form-control-lg moneda" id="entrada1" type="text"
                         aria-label=".form-control-lg example">
@@ -88,9 +88,9 @@
                 <form>
                     <select class="form-select moneda" id="seleccion" aria-label="Default select example">
                         <option selected>Selecciona el tipo de moneda</option>
-                        <option value="1"><span>MXN $</span> - Peso mexicano</option>
-                        <option value="2"><span>ARS $</span> - Peso argentino</option>
-                        <option value="3"><span>COP $</span> - Peso colombiano</option>
+                        <option value="1">MXN $ - Peso mexicano</option>
+                        <option value="2">ARS $ - Peso argentino</option>
+                        <option value="3">COP $ - Peso colombiano</option>
                     </select>
                     <input class="form-control form-control-lg moneda" id="entrada2" type="text"
                         aria-label=".form-control-lg example">
@@ -106,50 +106,32 @@
 
 
 
-        <!-- <div>
+    
 
-            <div class="mb-3">
-                <h2>Nueva nota</h2>
-                <input type="text" class="form-control nota" id="exampleFormControlInput1 tituloNota" placeholder="Titulo">
-            </div>
-            <div class="mb-3">
-                <textarea class="form-control nota" id="exampleFormControlTextarea1 contenidoNota" rows="3"
-                    placeholder="Escriba su nota aqui!"></textarea>
-            </div>
-
-            <div class="d-grid gap-2 ">
-                <button class="btn btn-success guardar" id="botoncitoguardar" type="button">Guardar</button>
-                <button class="btn btn-danger guardar" type="button">Borrar</button>
-            </div>
-        </div>
-        <br>
-        <div id="contenedor">
-         
-
-        </div> -->
+<div class="appnotas">
+    <div>
+        <input type="text" id="titulo" placeholder="Título de la Nota">
+        <textarea id="texto" placeholder="Texto de la Nota"></textarea>
+        <button id="guardarBtn">Guardar</button>
+        <button id="limpiarBtn">Borrar</button>
+    </div>
 
 
-        <div>
-            <input type="text" id="titulo" placeholder="Título de la Nota">
-            <textarea id="texto" placeholder="Texto de la Nota"></textarea>
-            <button id="guardarBtn">Guardar</button>
-            <button id="limpiarBtn">Borrar</button>
-          </div>
+    <div id="contenedor">
 
 
-          <div id="contenedor">
+    </div>
 
 
-          </div>
-
-
-          <div>
-            <input type="text" id="filtroTexto" placeholder="Buscar por texto">
-            <label>
-              <input type="checkbox" id="filtroRealizadas">
-              Mostrar solo realizadas
-            </label>
-          </div>
+    <div class="form-check form-switch">
+        <input type="text" id="filtroTexto" placeholder="Buscar por texto">
+        <label>
+            <input class="form-check-input" type="checkbox" role="switch" id="filtroRealizadas">
+            Mostrar solo las realizadas
+        </label>
+    </div>
+</div>
+        
 
 
 

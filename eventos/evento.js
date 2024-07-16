@@ -9,10 +9,11 @@ botonCalcular.addEventListener('click', (calculo) => {
 
     const est = parseFloat(estatura);
     const pes = parseFloat(peso);
+let m = est / 100
 
-    let suma = est + pes
+    let suma = pes / m
 
-    let division = suma / pes
+    let division = suma / m
 
     document.getElementById('resultado').value = division
 
@@ -62,119 +63,21 @@ seleccion.addEventListener('change', (divisa) => {
 
 
 
-// const notasPrueba = {
-// nuevas: [
-//     {
-//         id: 1,
-//     titulo: 'Sacar la basura',
-//     texto: 'Mi mama me va a regañar si no lo hago',
-//     realizada: false
-//     }
-// ]
-
-// }
-
-// let notasNuevas = notasPrueba.nuevas
-
-// let idGlobal = 1; // Último ID creado manualmente
-
-
-// function crearNuevaNota() {
-//   idGlobal += 1; // Incrementar el ID global
-//   console.log('Nuevo ID de nota creado:', idGlobal);
- 
-
-// let contenedorNotas = document.getElementById ('contenedor')
-
-// let notas = document.createElement ('div')
-// notas.className = "card text-bg-warning mb-3 cardNotas"
-// notas.id = `nota-${idGlobal}`;
-// notas.innerHTML =`
-// <div class="card-header">
-//                     <div class="form-check">
-//                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-//                         <label class="form-check-label" for="flexCheckDefault">
-//                             ${notasNuevas[0].titulo}
-//                         </label>
-//                     </div>
-//                 </div>
-//                 <div class="text-center mb-3">
-//                     <div class="card-body">
-                      
-//                       <p class="card-text">${notasNuevas[0].texto} </p>
-//                       <a href="#" class="btn btn-danger">Borrar nota</a>
-//                     </div>
-//                   </div>
-// `
-// contenedorNotas.appendChild(notas);
-
-// }
-
-// crearNuevaNota();
-
-// // crearNuevaNota(); // Salida: Nuevo ID de nota creado: 2
-// // crearNuevaNota(); // Salida: Nuevo ID de nota creado: 3
-
-// function agregarNota(titulo, texto) {
-//     const nuevaNota = {
-//       titulo: titulo,
-//       texto: texto
-//     };
-//     notasNuevas.push(nuevaNota);
-//     console.log('Nota agregada:', nuevaNota);
-//   }
-  
-//   // Ejemplo de uso de la función agregarNota
-//   agregarNota('Nuevo Título', 'Nuevo Texto');
-//   console.log(notasPrueba);
-
-
-
-//   function guardarNota() {
-//     const titulo = document.getElementById('tituloNota').value;
-//     const texto = document.getElementById('contenidoNota').value;
-  
-//     if (titulo.trim() === '' || texto.trim() === '') {
-//       alert('Por favor, llene todos los campos.');
-//       return;
-//     }
-  
-//     // agregarNota(titulo, texto);
-//     // // pintarNotas();
-//   }
-  
-// guardarNota();
-
-
-// let botonGuardar = document.getElementById ('botoncitoguardar')
-
-// botonGuardar.addEventListener ('click', (guardar) => {
-
-
-// console.log(guardarNota);
-
-// })
-
-
-
-
-
-    // a. Crear un array donde vamos a guardar las notas
+   
     let notas = [];
   
-    // b. Agregar un par de notas de prueba
-    notas.push({ id: 1, titulo: 'Nota 1', texto: 'Texto de la nota 1', realizada: false });
-    notas.push({ id: 2, titulo: 'Nota 2', texto: 'Texto de la nota 2', realizada: false });
+   
+    notas.push({ id: 1, titulo: 'Nota 1', texto: 'Texto nota 1', realizada: false });
+    notas.push({ id: 2, titulo: 'Nota 2', texto: 'Texto nota 2', realizada: false });
   
-    // c. Crear una variable idGlobal e inicializarla
+   
     let idGlobal = 2;
   
-    // d. Crear un div que va a ser el contenedor de las notas (esto ya está en el HTML)
   
-    // e. Crear una función que pinte las notas en forma de tarjetas dentro del div contenedor
+   
     function pintarNotas() {
       const contenedor = document.getElementById('contenedor');
-      contenedor.innerHTML = ''; // Limpiar el contenedor
+      contenedor.innerHTML = ''; 
   
       if (notas.length === 0) {
         contenedor.innerHTML = '<p>NO HAY NOTAS PARA MOSTRAR</p>';
@@ -207,14 +110,14 @@ seleccion.addEventListener('change', (divisa) => {
       });
     }
   
-    // g. Crear una función agregarNota
+    
     function agregarNota(titulo, texto) {
       idGlobal++;
       const nuevaNota = { id: idGlobal, titulo, texto, realizada: false };
       notas.push(nuevaNota);
     }
   
-    // h. Al presionar el botón guardar
+   
     document.getElementById('guardarBtn').addEventListener('click', () => {
       const titulo = document.getElementById('titulo').value;
       const texto = document.getElementById('texto').value;
@@ -228,19 +131,19 @@ seleccion.addEventListener('change', (divisa) => {
       pintarNotas();
     });
   
-    // Limpiar campos
+    
     document.getElementById('limpiarBtn').addEventListener('click', () => {
       document.getElementById('titulo').value = '';
       document.getElementById('texto').value = '';
     });
   
-    // i. Función borrarNota
+    
     window.borrarNota = function(id) {
       notas = notas.filter(nota => nota.id !== id);
       pintarNotas();
     };
   
-    // n. Función marcarRealizada
+    
     window.marcarRealizada = function(id) {
       const nota = notas.find(nota => nota.id === id);
       if (nota) {
@@ -249,19 +152,19 @@ seleccion.addEventListener('change', (divisa) => {
       }
     };
   
-    // p. Filtrar por realizadas
+   
     function filtrarPorRealizadas(array) {
       const filtroRealizadas = document.getElementById('filtroRealizadas').checked;
       return filtroRealizadas ? array.filter(nota => nota.realizada) : array;
     }
   
-    // q. Filtrar por texto
+    
     function filtrarPorTexto(array, texto) {
       if (texto.trim() === '') return array;
       return array.filter(nota => nota.titulo.includes(texto) || nota.texto.includes(texto));
     }
   
-    // r. Actualizar las notas filtradas
+   
     function actualizarNotasFiltradas() {
       const texto = document.getElementById('filtroTexto').value;
       let notasFiltradas = filtrarPorTexto(notas, texto);
@@ -307,7 +210,7 @@ seleccion.addEventListener('change', (divisa) => {
     document.getElementById('filtroTexto').addEventListener('input', actualizarNotasFiltradas);
     document.getElementById('filtroRealizadas').addEventListener('change', actualizarNotasFiltradas);
   
-    // Llamar a la función para pintar las notas iniciales
+    
     pintarNotas();
   
   
