@@ -36,10 +36,7 @@ seleccion.addEventListener('change', (divisa) => {
 
     const seleccionOpcion = divisa.target.value
 
-    let conversion;// let conversion = 17.8 * entrada
-    //     let conversion2 = 919 * entrada
-    //     let conversion3 = 3977.72 * entrada
-
+    let conversion;
    
     switch (seleccionOpcion) {
         case '1':
@@ -174,7 +171,7 @@ seleccion.addEventListener('change', (divisa) => {
   
     function pintarNotasFiltradas(notasFiltradas) {
       const contenedor = document.getElementById('contenedor');
-      contenedor.innerHTML = ''; // Limpiar el contenedor
+      contenedor.innerHTML = ''; 
   
       if (notasFiltradas.length === 0) {
         contenedor.innerHTML = '<p>NO HAY NOTAS PARA MOSTRAR</p>';
@@ -214,51 +211,3 @@ seleccion.addEventListener('change', (divisa) => {
     pintarNotas();
   
   
-
-
-
-
-
-
-
-
-
-
-
-
-  
- 
-//   function pintarNotas() {
-//     const contenedor = document.getElementById('contenedor');
-//     contenedor.innerHTML = ''; // Limpiar el contenedor
-
-
-  
-//     notasPrueba.forEach((nota, index) => {
-//       const nuevaNota = document.createElement('div');
-//       nuevaNota.className = 'card text-bg-warning mb-3 cardNotas';
-//       nuevaNota.id = `nota-${index + 1}`;
-  
-//       nuevaNota.innerHTML = `
-//         <div class="card-header">
-//           <div class="form-check">
-//             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault-${index + 1}">
-//             <label class="form-check-label" for="flexCheckDefault-${index + 1}">
-//               ${nota.titulo}
-//             </label>
-//           </div>
-//         </div>
-//         <div class="text-center mb-3">
-//           <div class="card-body">
-//             <p class="card-text">${nota.texto}</p>
-//             <a href="#" class="btn btn-danger">Borrar nota</a>
-//           </div>
-//         </div>
-//       `;
-  
-//       contenedor.appendChild(nuevaNota);
-//     });
-//   }
-  
-//   // Llamar a la función para pintar las notas iniciales
-//   pintarNotas();

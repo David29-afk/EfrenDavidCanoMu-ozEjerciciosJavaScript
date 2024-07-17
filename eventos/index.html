@@ -112,8 +112,8 @@
     <div>
         <input type="text" id="titulo" placeholder="Título de la Nota">
         <textarea id="texto" placeholder="Texto de la Nota"></textarea>
-        <button id="guardarBtn">Guardar</button>
-        <button id="limpiarBtn">Borrar</button>
+        <button id="guardarBtn" class="btn btn-success">Guardar</button>
+        <button id="limpiarBtn"  class="btn btn-danger">Borrar</button>
     </div>
 
 
@@ -122,14 +122,19 @@
 
     </div>
 
-
+<div class="final d-flex">
     <div class="form-check form-switch">
         <input type="text" id="filtroTexto" placeholder="Buscar por texto">
+        
+    </div>
+    <div class="form-check form-switch">
         <label>
             <input class="form-check-input" type="checkbox" role="switch" id="filtroRealizadas">
             Mostrar solo las realizadas
         </label>
     </div>
+</div>
+   
 </div>
         
 
